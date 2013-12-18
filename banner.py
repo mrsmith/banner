@@ -19,7 +19,7 @@ def get_cwd():
     git_root = git('rev-parse --show-toplevel')
     cwd = os.getcwd()
 
-    return cwd[len(os.path.commonprefix((cwd, git_root))) + len(os.path.sep) :]
+    return cwd[len(os.path.commonprefix((cwd, git_root))) + len(os.path.sep) :] or '.'
 
 def get_cmd():
     return ' '.join(sys.argv)
